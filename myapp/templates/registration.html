@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+    <form method="post" action="">
+        {% csrf_token %}
+        <h1>User Account Create Form</h1>
+    {% if messages %}
+        {% for m in messages %}
+            {{ m }}
+        {% endfor %}
+    {% endif %}
+
+        <br>
+        <label>User Name</label>
+        {{ form.username }}
+        {{ form.username.errors }}
+        <br>
+        <br>
+        <label>Email Id</label>
+        {{ form.email }}
+        {{ form.email.errors }}
+        <br>
+        <br>
+
+        <label>First Name</label>
+        {{ form.first_name }}
+        <br>
+        <br>
+        <label>Last Name</label>
+        {{ form.last_name }}
+        <br>
+        <br>
+        <label>Password</label>
+        {{ form.password }}
+        <br>
+        <br>
+        <label>Confirm Password</label>
+        {{ form.confirm_password }}
+        {{ form.confirm_password.errors }}
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

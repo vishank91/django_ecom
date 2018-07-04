@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<h3>Admin Login Form</h3>
+    {% if messages %}
+        {% for m in messages %}
+            {{ m }}
+        {% endfor %}
+    {% endif %}
+    <form method="post" action="">
+        {% csrf_token %}
+        <label>Username</label>
+        <input type="text" name="user" placeholder="Enter username :">
+        <br>
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter password : ">
+        <br>
+
+        <button type="submit">Login</button>
+    </form>
+
+</body>
+</html>

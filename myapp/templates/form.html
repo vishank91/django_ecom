@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+    <h1>Product Add Details Form</h1>
+    <form method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+{% if messages %}
+    {% for i in messages %}
+        {{ i }}
+    {% endfor %}
+{% endif %}
+
+<div class="products-catagories-area clearfix">
+            <div class="amado-pro-catagory clearfix">
+            <a href="/myapp/logout/" class="btn btn-primary">LogOut</a>
+            </div>
+</div>
+</body>
+</html>
